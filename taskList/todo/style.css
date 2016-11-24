@@ -102,6 +102,7 @@ li {
   height: 6px;
   background: #3E8760 !important;
   position: absolute;
+  left: 120px;
   bottom: 0;
   width: 120px;
   z-index: 2;
@@ -110,55 +111,58 @@ li {
   -ms-transition: all 0.35s;
   transition: all 0.35s;
 }
-
+/*
 #main li:nth-child(1):hover ul div {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+*/
 #main li:nth-child(1):hover ~ #marker {
+  -webkit-transform: translate(-120px, 0);
+  -moz-transform: translate(-120px, 0);
+  -ms-transform: translate(-120px, 0);
+  transform: translate(-120px, 0);
+}
+/*
+#main li:nth-child(2):hover ul div {
+    -webkit-transform: translate(0px, 0);
+    -moz-transform: translate(0px, 0);
+    -ms-transform: translate(0px, 0);
+    transform: translate(0px, 0);
+}
+*/
+
+#main li:nth-child(2):hover ~ #marker {
   -webkit-transform: translate(0px, 0);
   -moz-transform: translate(0px, 0);
   -ms-transform: translate(0px, 0);
-  transform: translate(0px, 0);
+  transform: translate(00px, 0);
 }
-
-#main li:nth-child(2):hover ul div {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-#main li:nth-child(2):hover ~ #marker {
-  -webkit-transform: translate(120px, 0);
-  -moz-transform: translate(120px, 0);
-  -ms-transform: translate(120px, 0);
-  transform: translate(120px, 0);
-}
-
+/*
 #main li:nth-child(3):hover ul div {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
-}
+}*/
 #main li:nth-child(3):hover ~ #marker {
-  -webkit-transform: translate(240px, 0);
-  -moz-transform: translate(240px, 0);
-  -ms-transform: translate(240px, 0);
-  transform: translate(240px, 0);
+  -webkit-transform: translate(120px, 0);
+  -moz-transform: translate(120px, 0);
+  -ms-transform: translate(120px, 0);
+  transform: translate(120px, 0);
 }
-
+/*
 #main li:nth-child(4):hover ul div {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
-}
+}*/
 #main li:nth-child(4):hover ~ #marker {
-  -webkit-transform: translate(360px, 0);
-  -moz-transform: translate(360px, 0);
-  -ms-transform: translate(360px, 0);
-  transform: translate(360px, 0);
+  -webkit-transform: translate(240px, 0);
+  -moz-transform: translate(240px, 0);
+  -ms-transform: translate(240px, 0);
+  transform: translate(240px, 0);
 }
