@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+        </title>
+        <style media="screen">
+        .slider-img {
+            display: none;
+        }
+        .slider-active {
+            display: inline-block;
+        }
+        .buttons {
+            position:
+        }
+        </style>
+    </head>
+    <body>
+        <div class="slider">
+            <img class="slider-img slider-active"  src="1.jpg" alt="" />
+            <img class="slider-img"  src="2.jpg" alt="" />
+            <img class="slider-img"  src="3.jpg" alt="" />
+            <img class="slider-img"  src="4.jpg" alt="" />
+        </div>
+        <div class="buttons">
+            <button class="button-left" type="button" > < </button>
+            <button class="button-right" type="button" > > </button>
+        </div>
+
+
+        <script>
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+
+
+
+        var numberOfImages = 4
+        var index = 0
+
+        var indexRight = function () {
+            var max = 3
+            index = index + 1
+            if (index > max) {
+                index = 0
+            }
+            return index
+        }
+
+        var next = function () {
+            var slider = document.querySelector('.slider-img')
+            var image = document.querySelector('.slider-active')
+            image.classList.remove('slider-active')
+            var active = document.querySelectorAll('.slider-img')
+            active[indexRight()].classList.add('slider-active')
+        }
+
+        var buttonRight = document.querySelector('.button-right')
+        buttonRight.addEventListener('click', function(){
+            log(buttonRight)
+            next()
+        })
+
+        var buttonLeft = document.querySelector('.button-left')
+        buttonLeft.addEventListener('click', function(){
+            log(buttonLeft)
+            next()
+        })
+
+        </script>
+    </body>
+</html>
