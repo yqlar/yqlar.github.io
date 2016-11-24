@@ -36,9 +36,10 @@ var templateTodo = function(todo) {
         var t = `
             <div class='todo-cell'>
                 <button class='todo-done '>完成</button>
-                <button class='todo-delete'>删除</button>
                 <button class='todo-edit'>编辑</button>
                 <span contenteditable='false' class='todo-mission' >${todo.task}</span>
+                <button class='todo-delete'>删除</button>
+
                 <span class='todo-time'>  ${todo.time}</span>
             </div>
         `
@@ -50,6 +51,8 @@ var templateTodo = function(todo) {
                 <button class='todo-delete'>删除</button>
                 <button class='todo-edit'>编辑</button>
                 <span contenteditable='false' class='todo-mission'>${todo.task}</span>
+                <button class='todo-delete'>删除</button>
+
                 <span class='todo-time'> ${todo.time}</span>
             </div>
         `

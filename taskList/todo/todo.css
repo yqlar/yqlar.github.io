@@ -1,0 +1,53 @@
+body {
+  font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+  background: #374954;
+  color: white;
+  text-align: center;
+}
+#todo-form{
+    background-color: #BDD6EE；
+}
+#id-div-container {
+    margin: 3px;
+    padding: 5px;
+    text-align: left;
+}
+#id-input-todo{
+    font-size: 20px;
+}
+.title{
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.todo-main{
+    text-align: center;
+    margin: 0px 20px auto;
+
+    padding: 15px;
+}
+.todo-content-line {
+    text-decoration:line-through;
+    color: red;
+}
+.todo-time{
+    color: #0E88EB;
+    font-size: 10px;
+    font-weight: bold;
+}
+.todo-cell{
+    padding: inherit;
+    margin: 5px auto;
+}
+
+button, button:visited {
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding: 1px 25px;
+    border:0px;
+    border-radius: 10px;
+    text-align: center;
+    background: #1AA260;
+    color: white;
+}
