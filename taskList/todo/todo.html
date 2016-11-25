@@ -32,15 +32,13 @@
             </div>
             <h1 class="title">工作进度</h1>
             <div class="todo-form">
-                <input id='id-input-todo' type="text">
+                <input type="text" id='id-input-todo' value="今天想做些什么呢？" onfocus="{this.value='';this.style.color='black';}" onblur="if(this.value==''){this.value='今天想做些什么呢？';this.style.color='#bebdbd';}"/>
                 <button id='id-button-addtodo' type="button" >添加</button>
             </div>
             <div id="id-div-container">
 
             </div>
         </div>
-
-
         <script src='f8-18-todojs.js'></script>
     </body>
 </html>

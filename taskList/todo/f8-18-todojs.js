@@ -20,6 +20,7 @@ var bindEventAdd = function() {
         saveTodos()
         // 添加到 container 中
         insertTodo(todo)
+
     })
 }
 
@@ -35,10 +36,10 @@ var templateTodo = function(todo) {
     if (todo.done == 0) {
         var t = `
             <div class='todo-cell'>
+                <button class='todo-delete'>删除</button>
                 <button class='todo-done '>完成</button>
                 <button class='todo-edit'>编辑</button>
                 <span contenteditable='false' class='todo-mission' >${todo.task}</span>
-                <button class='todo-delete'>删除</button>
 
                 <span class='todo-time'>  ${todo.time}</span>
             </div>
@@ -47,10 +48,10 @@ var templateTodo = function(todo) {
     }else {
         var t = `
             <div class='todo-cell todo-content-line'>
+                <button class='todo-delete'>删除</button>
                 <button class='todo-done '>完成</button>
                 <button class='todo-edit'>编辑</button>
                 <span contenteditable='false' class='todo-mission'>${todo.task}</span>
-                <button class='todo-delete'>删除</button>
 
                 <span class='todo-time'> ${todo.time}</span>
             </div>
@@ -66,7 +67,7 @@ var bindEventEnter = function () {
         var target = event.target
         // log('container-keydown： ', event, target)
         if (event.key ==='Enter') {
-            log('按了回车')
+            // log('按了回车')
             event.preventDefault()
             target.blur()
             var todoDiv = target.parentElement
@@ -85,14 +86,14 @@ var bindEventButton = function() {
     todoContainer.addEventListener('click', function (event) {
         var target = event.target
         if (target.classList.contains('todo-done')) {
-            log('target.classList: ', target.classList)
+            // log('target.classList: ', target.classList)
 
             var todoDiv = target.parentElement
             var index = indexOfElement(todoDiv)
             todoLists[index].done = toggleClass(todoDiv, 'todo-content-line')
             saveTodos()
         } else if (target.classList.contains('todo-delete')) {
-            log('target.classList: ', target.classList)
+            // log('target.classList: ', target.classList)
 
             var todoDiv = target.parentElement
             var index = indexOfElement(todoDiv)
@@ -113,14 +114,14 @@ var bindEventBlur = function () {
     var todoContainer = document.querySelector('#id-div-container')
     todoContainer.addEventListener('blur', function (event) {
         var target = event.target
-        log('target: ', target)
-        log('target.classList: ', target.classList)
+        // log('target: ', target)
+        // log('target.classList: ', target.classList)
         if (target.classList.contains('todo-mission')) {
             target.setAttribute('contenteditable', 'false')
             var index = indexOfElement(target.parentElement)
             todoLists[index].task = target.innerHTML
             saveTodos()
-            log(index)
+            // log(index)
         }
     }, true)
 }
