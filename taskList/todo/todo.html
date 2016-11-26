@@ -3,42 +3,33 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=no">
-        <title>f8-18题--todo</title>
+        <title>风味鸡油-待办事项</title>
         <link rel="stylesheet" href="todo.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animation.css">
     </head>
 
     <body>
-        <div class="todo-main">
-            <div class="top-header">
-            </div>
+        <div id="main">
             <div class="header">
-                <div class="htmleaf-container">
-                    <nav>
-                      <ul id="main">
-                        <li><a href="https://yqlar.github.io">首页</a></li>
-                        <li><a target="_blank" href="https://yqlar.github.io/yqlar.github.io/taskList/todo/todo">待办事项</a></li>
-                        <li><a target="_blank" href="https://github.com/yqlar">GitHub</a></li>
-                        <li>个人项目
-                          <ul class="drop">
-                            <div>
-                            </div>
-                          </ul>
-                        </li>
-                        <div id="marker"></div>
-                      </ul>
+                    <nav class="nav-header">
+                        <ul>
+                        <li class="li-header"><a href="https://yqlar.github.io">首页</a></li>
+                        <li class="li-header"><a target="_blank" href="https://yqlar.github.io/yqlar.github.io/taskList/todo/todo">待办事项</a></li>
+                        <li class="li-header"><a target="_blank" href="https://github.com/yqlar">GitHub</a></li>
+                        <li class="li-header">个人项目</li>
+                    </ul>
                     </nav>
                 </div>
-            </div>
-            <h1 class="title">工作进度</h1>
+
+            <h1 class="todo-title">待办事项</h1>
             <div class="todo-form">
-                <input type="text" id='id-input-todo' value="今天想做些什么呢？" onfocus="{this.value='';this.style.color='black';}" onblur="if(this.value==''){this.value='今天想做些什么呢？';this.style.color='#bebdbd';}"/>
+                <input type="text" id='id-input-todo' placeholder='今天想做些什么呢？' onfocus="{this.value='';}"/>
                 <button id='id-button-addtodo' type="button" >添加</button>
             </div>
             <div id="id-div-container">
 
             </div>
         </div>
-        <script src='f8-18-todojs.js'></script>
+        <script src='todojs.js'></script>
     </body>
 </html>

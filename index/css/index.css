@@ -49,37 +49,6 @@ ul, li {
     right: 0px;
     margin: 0px auto;
 }
-
-#todo-form{
-    background-color: #BDD6EE；
-}
-#id-div-container {
-    margin: 3px 0px;
-    padding: 5px 0px;
-    text-align: left;
-}
-#id-input-todo{
-    font-size: 15px;
-}
-.todo-content-line {
-    text-decoration:line-through;
-    color: red;
-}
-.todo-time{
-    color: #0E88EB;
-    font-size: 10px;
-    font-weight: bold;
-}
-.todo-cell{
-    padding: inherit;
-    margin: 5px 0px 5px 0px auto;
-}
-.todo-delete{
-    background: #A49EF0;
-}
-.todo-done {
-    background: #FF7680
-}
 button, button:visited {
     font-size: 15px;
     height: 30px;
