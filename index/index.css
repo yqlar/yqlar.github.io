@@ -31,7 +31,7 @@ body {
     display: inline-block;
     cursor: pointer;
     z-index: 5;
-    min-width: 120px;
+    min-width: 100px;
     margin: 0px auto;
     padding: 12px 0px;
     text-align: center;
@@ -40,10 +40,13 @@ body {
     background: #1AA260;
 }
 
-ul, li {
+li {
     margin: 0;
 }
-
+ul {
+    margin: 0px auto;
+    padding: 0px;
+}
 .foot{
     bottom: 0px;
     right: 0px;
