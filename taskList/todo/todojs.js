@@ -20,8 +20,13 @@ var bindEventAdd = function() {
         saveTodos()
         // 添加到 container 中
         insertTodo(todo)
-
     })
+}
+
+
+var clearInput = function () {
+    var todoInput = document.querySelector('#id-input-todo')
+    todoInput.select()
 }
 
 // 插入添加的事件

@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="taskList/todo/todo.css">
         <link rel="stylesheet" href="index/animation.css">
         <link rel="stylesheet" href="index/allcss.css">
+        <style media="screen">
+        @media all and (min-width:300px) and (max-width:800px){
+        }
+
+        </style>
     </head>
 
     <body>
@@ -24,13 +29,14 @@
 
             <h1 class="todo-title">待办事项</h1>
             <div class="todo-form">
-                <input type="text" id='id-input-todo' placeholder='今天想做些什么呢？' onfocus="{this.value='';}"/>
-                <button id='id-button-addtodo' type="button" >添加</button>
+                <input type="text" id='id-input-todo' value='' placeholder='今天想做些什么呢？' onclick="clearInput()">
+                <button id='id-button-addtodo' type="button">添加</button>
             </div>
             <div id="id-div-container">
 
             </div>
         </div>
         <script src='taskList/todo/todojs.js'></script>
+
     </body>
 </html>

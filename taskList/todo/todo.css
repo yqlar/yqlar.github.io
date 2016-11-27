@@ -11,6 +11,7 @@
 }
 #id-input-todo{
     font-size: 15px;
+    width: 50%;
 }
 .todo-content-line {
     text-decoration:line-through;
