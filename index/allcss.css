@@ -20,12 +20,12 @@ body {
 }
 .nav-header{
     position: fixed;
-    height: inherit;
+    height: 2.5em;
     background: #6BBE92;
     width: 100%
 }
 .nav-header ul{
-    height: inherit;
+    height: 2.5em;
     text-align: left;
 }
 .nav-header li {
