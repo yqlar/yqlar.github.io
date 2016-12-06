@@ -1,42 +1,227 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=1.0, user-scalable=no">
-        <title>风味鸡油-待办事项</title>
-        <link rel="stylesheet" href="taskList/todo/todo.css">
+        <title>辣子鸡-待办事项</title>
         <link rel="stylesheet" href="index/animation.css">
         <link rel="stylesheet" href="index/allcss.css">
-        <style media="screen">
-        @media all and (min-width:300px) and (max-width:800px){
-        }
+        <link rel="stylesheet" href="task/todo/todo.css">
+        <script src='tool/jquery-3.1.1.min.js'></script>
 
-        </style>
     </head>
-
     <body>
-        <div id="main">
+        <div class="glass">
             <div class="header">
-                    <nav class="nav-header">
-                        <ul>
-                        <li class="li-header"><a href="https://yqlar.github.io">首页</a></li>
-                        <li class="li-header nav-todo"><a target="_blank" href="https://yqlar.github.io/yqlar.github.io/todo">待办事项</a></li>
-                        <li class="li-header"><a target="_blank" href="https://github.com/yqlar">GitHub</a></li>
-                        <li class="li-header">个人项目</li>
+                <nav class="nav-header">
+                    <ul>
+                    <li class="li-header" ><a target="_parent" href="https://yqlar.github.io">首页</a></li>
+                    <li class="li-header nav-todo"><a target="_parent" href="https://yqlar.github.io/yqlar.github.io/todo">待办事项</a></li>
+                    <li class="li-header"><a target="_blank" href="https://github.com/yqlar">GitHub</a></li>
+                    <li class="li-header">个人项目</li>
                     </ul>
-                    </nav>
-                </div>
-
-            <h1 class="todo-title">待办事项</h1>
-            <div class="todo-form">
-                <input type="text" id='id-input-todo' value='' placeholder='今天想做些什么呢？' onclick="clearInput()">
-                <button id='id-button-addtodo' type="button">添加</button>
+                </nav>
             </div>
-            <div id="id-div-container">
-
+            <h1 class="todo-title">待办事项</h1>
+            <form class="form">
+                <input type="text" id="id-input-add" value="" placeholder="今天想做些什么呢？" >
+                <button id='id-button-add' type="button" name="button">添加任务</button>
+                <button id='id-button-deleteall' type="button" name="button">删除全部</button>
+            </form>
+            <div class="" id='id-div-todo'>
+                <!-- todocell -->
             </div>
         </div>
-        <script src='taskList/todo/todojs.js'></script>
+        <div class="cover hidden">
+            <h3 class="h-button">确定删除所有任务吗？</h3>
+            <br>
+            <button class="button-delete" type="button" name="button">确定</button>
+        </div>
+        <script>
+        // log函数
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+
+        var todoList = []
+
+        $('#id-button-add').on('click', function () {
+            var task = $('#id-input-add').val()
+            var todo = {
+                'task': task,
+                'time': currentTime(),
+                'done': 0,
+            }
+            todoList.push(todo)
+            saveTodos()
+            $('#id-div-todo').append(todoTemplete(todo))
+            log(todoList)
+        })
+
+        // 创建 todo 函数
+        var todoTemplete = function (todo) {
+            if (todo.done === 0) {
+                var t = `
+                <div class="todo-cell">
+                    <div class='mission-box'>
+                        <span class='mission ' contenteditable='false'>${todo.task}</span>
+                        <p>${todo.time}<p>
+                    </div>
+                    <div class="">
+                        <button class='edit-button' type="button" name="button">编辑</button>
+                        <button class='delete-button' type="button" name="button">删除</button>
+                        <button class='complete-button' type="button" name="button">完成</button>
+                    </div>
+                </div>
+                `
+                return t
+            } else if (todo.done === 1) {
+                var t = `
+                <div class="todo-cell">
+                    <div class='mission-box'>
+                        <span class='mission done' contenteditable='false'>${todo.task}</span>
+                        <p>${todo.time}<p>
+                    </div>
+                    <div class="">
+                        <button class='edit-button' type="button" name="button">编辑</button>
+                        <button class='delete-button' type="button" name="button">删除</button>
+                        <button class='complete-button' type="button" name="button">完成</button>
+                    </div>
+                </div>
+                `
+                return t
+            }
+        }
+
+
+        // 绑定删除
+        $('#id-div-todo').on('click', '.delete-button', function (event) {
+            console.log('删除')
+            var button = $(event.target)
+            var cell = button.closest('.todo-cell')
+            var index = indexOfElement(cell)
+            todoList.splice(index, 1)
+            saveTodos()
+            button.closest('.todo-cell').remove()
+        })
+        // 绑定编辑
+        $('#id-div-todo').on('click', '.edit-button', function (event) {
+            console.log('编辑')
+            var button = $(event.target)
+            var span = button.closest('.todo-cell').find('.mission')
+            span.prop('contenteditable', 'true')
+            span.focus()
+        })
+        // 绑定完成
+        $('#id-div-todo').on('click', '.complete-button', function (event) {
+            console.log('完成')
+            var button = $(event.target)
+            var span = button.closest('.todo-cell').find('.mission')
+            var cell = button.closest('.todo-cell')
+            var index = indexOfElement(cell)
+            if (span.hasClass('done')) {
+                span.removeClass('done')
+                todoList[index].done = 0
+                saveTodos()
+            }else {
+                span.addClass('done')
+                todoList[index].done = 1
+                saveTodos()
+            }
+        })
+
+        // 绑定失去焦点
+        $('#id-div-todo').on('blur', '.mission', function (event) {
+            console.log('失去焦点')
+            var span = $(event.target)
+            log(span)
+            span.prop('contenteditable', 'false')
+            log('spanval', span.text())
+            var cell = span.closest('.todo-cell')
+            var index = indexOfElement(cell)
+            todoList[index].task = span.text()
+            saveTodos()
+        })
+        // 绑定回车保存、失去焦点
+        $('#id-div-todo').on('keydown', function (event) {
+            var target = $(event.target)
+            if (event.key === 'Enter') {
+                var span = target.closest('.todo-cell').find('span')
+                span.prop('contenteditable', 'false')
+            }
+
+        })
+
+        // 返回自己在父元素中的下标
+        var indexOfElement = function (element) {
+            var child = element.parent().children()
+            for (var i = 0; i < child.length; i++) {
+                var e = $(child[i])
+                if (e.is(element)) {
+                    return i
+                }
+            }
+        }
+
+        // 提示弹窗
+        $('#id-button-deleteall').on('click', function () {
+            var button = $('.cover')
+            var cover = $('.glass')
+            cover.addClass('cover-box')
+            button.removeClass('hidden')
+        })
+
+
+        // 删除所有任务
+        $('.button-delete').on('click', function () {
+            var button = $('.cover')
+            var cover = $('.glass')
+            cover.removeClass('cover-box')
+            button.addClass('hidden')
+            todoList = []
+            saveTodos()
+            $('#id-div-todo').children().remove()
+        })
+
+         $('#id-input-todo').on('focus', function (event) {
+             var t = $(event.target)
+             log('t',t)
+             t.select()
+         })
+
+        // 时间函数
+         var currentTime = function() {
+             var d = new Date()
+             var month = d.getMonth() + 1
+             var date = d.getDate()
+             var hours = d.getHours()
+             var minutes = d.getMinutes()
+             var seconds = d.getSeconds()
+             var timeString = `${month}月${date}日--${hours}:${minutes}`
+             return timeString
+         }
+
+         // 存储todo
+         var saveTodos = function () {
+             var s = JSON.stringify(todoList)
+             localStorage.todoList = s
+         }
+
+         // 读取todo
+         var loadTodos = function () {
+             var s = localStorage.todoList
+             return JSON.parse(s)
+         }
+
+         var load = function () {
+             todoList = loadTodos()
+             for (var i = 0; i < todoList.length; i++) {
+                 $('#id-div-todo').append(todoTemplete(todoList[i]))
+             }
+         }
+
+         load()
+        </script>
 
     </body>
 </html>
