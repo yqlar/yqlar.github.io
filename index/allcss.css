@@ -41,13 +41,18 @@ html, body {
     z-index: 5;
     min-width: 100px;
     margin: 0px auto;
-    padding: 12px 0px;
+    height: inherit;
     text-align: center;
 }
 .nav-header li:hover{
     background: #1AA260;
 }
-
+.nav-header a{
+    display: inline-block;
+    height: inherit;
+    min-width: inherit;
+    padding-top: 10px;
+}
 li {
     margin: 0;
 }
