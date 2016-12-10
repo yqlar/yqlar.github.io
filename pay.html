@@ -112,19 +112,15 @@
 
         $('.input-money').on('keyup', function (event) {
             var keys = event.key
-            var input = $('.input-money')
             var numbers = '0123456789'
-            for (var i = 0; i < numbers.length; i++) {
-                if (numbers[i] === keys) {
-                    var value = input.val()
-                    sale(value)
-                }else if (keys === 'Backspace') {
-                    var value = input.val()
-                    sale(value)
-                }
+            if (numbers.includes(keys)) {
+                var value = $('.input-money').val()
+                sale(value)
+            } else if (keys === 'Backspace') {
+                var value = $('.input-money').val()
+                sale(value)
             }
         })
-
 
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
