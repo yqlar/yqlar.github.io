@@ -60,7 +60,7 @@
                 </div>
             </main>
         </div>
-<p>888</p>
+<p>eee</p>
         <script>
 
         // log函数
@@ -113,18 +113,33 @@
         $('.input-money').on('keyup', function (event) {
             var keys = event.key
             var numbers = '0123456789'
+            var value = $('.input-money').val()
             if (numbers.includes(keys)) {
-                var value = $('.input-money').val()
                 sale(value)
             } else if (keys === 'Backspace') {
-                var value = $('.input-money').val()
                 sale(value)
             }
         })
 
+        $('.input-money').on('keypress', function (event) {
+            var keys = event.key
+            var numbers = '0123456789'
+            if (!numbers.includes(keys)) {
+                event.preventDefault()
+            }
+         })
+
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
         })
+
+        $('#id-input-qqnumber').on('keypress', function (event) {
+            var keys = event.key
+            var numbers = '0123456789'
+            if (!numbers.includes(keys)) {
+                event.preventDefault()
+            }
+         })
 
 
         $('.img-del').on('click', function () {
@@ -136,10 +151,19 @@
         setTimeout("$('.img-del').hide()", 400)
         })
 
+        $('#id-input-qqnumber').on('keypress', function (event) {
+            var keys = event.key
+            var numbers = '0123456789'
+            if (!numbers.includes(keys)) {
+                event.preventDefault()
+            }
+         })
+
         var sale = function (num) {
             var x = (num * 0.95)
             var y = (Math.round(x * 100) / 100)
-            $('.span-discounted').text(y)
+            var str = String(y)
+            $('.span-discounted').text(str)
         }
 
         // $('#button-recharge').on('click', function () {
