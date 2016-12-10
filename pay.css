@@ -196,6 +196,15 @@ ul {
     top: 1px;
     border-bottom: 1px solid #CACAC8;
 }
+.img-classify {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    z-index: 1;
+    width: 110px;
+    height: 127px;
+    display: none;
+}
 .div-classify {
     display: inline-block;
     background-color: #EEEFF3;
@@ -216,7 +225,6 @@ ul {
 .div-classify img {
     position: relative;
     left: 5px;
-
 }
 .div-search {
     display: inline-block;
@@ -229,13 +237,7 @@ ul {
     height: 30px;
     top: 9px;
 }
-.div-search span {
-    font-size: 10px;
-    position: absolute;
-    top: 5px;
-    right: 6px;
-    display: none;
-}
+
 .input-search {
     border: none;
     outline: none;
@@ -249,12 +251,25 @@ ul {
     border: 1px solid #EEEFF3;
     border-radius: 5px;
 }
-
+.input-search-left {
+    text-align: left;
+}
+.span-cancle {
+    color: #3879D9;
+    font-size: 10px;
+    position: absolute;
+    top: 15px;
+    right: 7px;
+    display: none;
+}
 .div-hotgame  {
     margin-top: 50px;
 }
 .div-hotgame p {
     font-size: 11px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #7F7F7F;
 }
 .div-hotgame ul {
     text-align: left;
@@ -262,7 +277,7 @@ ul {
 }
 .div-hotgame li {
     text-decoration: none;
-    border: 1px solid #EEEFF3;
+    border-bottom: 1px solid #CACAC8;
     font-size: 11px;
     font-weight: bold;
     display: block;
@@ -272,15 +287,27 @@ ul {
     position: relative;
 }
 .div-hotgame img {
-    border: 1px solid #EEEFF3;
+    border: 1px solid #CACAC8;
     line-height: 20px;
     position: absolute;
-    top: 9px;
-
+    top: 7px;
+    height: 45px;
+    width: 45px;
+    overflow: hidden;
 }
 .div-hotgame span {
     font-weight: bold;
     position: absolute;
     top: 18px;
-    left: 80px;
+    left: 60px;
+}
+.div-retrieve {
+    background-color: #FFFFFF;
+}
+.div-retrieve p {
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid #CACAC8;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 35px;
 }

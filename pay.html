@@ -51,6 +51,7 @@
                 </div>
 
                 <div class="main-box2 box-hidden ">
+                    <img class="img-classify" src="333.png">
                     <div class="div-fixedbox">
                         <div class="div-search-box">
                             <div class="div-classify">
@@ -59,8 +60,8 @@
                             </div>
                             <div class="div-search">
                                 <input class="input-search" type="text" name="" value="" placeholder="输入游戏名称搜索">
-                                <span>取消</span>
                             </div>
+                            <span class="span-cancle">取消</span>
                         </div>
                     </div>
                     <div class="div-hotgame">
@@ -83,22 +84,53 @@
                                 <span>怪物猎人</span>
                             </div></li>
                             <li><div class="div-game5">
-                                <img src="pay/img/game5.jpg" alt="">
+                                <img src="pay/img/game5.png" alt="">
                                 <span>魔兽世界</span>
                             </div></li>
                         </ul>
+                        <p>按首字母检索<br>C</p>
                     </div>
-                    <div class="div-">
+                    <div class="div-retrieve">
+                        <p>赤壁</p>
+                        <p>超级舞者</p>
+                        <p>超级跑跑</p>
+                        <p>彩虹岛</p>
+                        <p>CF点</p>
+                        <p>传奇世界</p>
+                        <p>赤壁</p>
+                        <p>赤壁</p>
+                        <p>超级舞者</p>
+                        <p>超级跑跑</p>
+                        <p>彩虹岛</p>
+                        <p>CF点</p>
+                        <p>传奇世界</p>
+                        <p>赤壁</p>
+                        <p>赤壁</p>
+                        <p>超级舞者</p>
+                        <p>超级跑跑</p>
+                        <p>彩虹岛</p>
+                        <p>CF点</p>
+                        <p>传奇世界</p>
+                        <p>赤壁</p>
+                        <p>赤壁</p>
+                        <p>超级舞者</p>
+                        <p>超级跑跑</p>
+                        <p>彩虹岛</p>
+                        <p>CF点</p>
+                        <p>传奇世界</p>
+                        <p>赤壁</p>
+                    </div>
+
+                    <div class="div">
 
                     </div>
                 </div>
 
                 <div class="main-box3 box-hidden">
-
                 </div>
             </main>
         </div>
-<p>2013-12-11  0:34</p>
+
         <script>
 
         // log函数
@@ -162,25 +194,7 @@
             }
             sale(value)
         }
-        // $('.input-money').on('keyup', function (event) {
-        //     var keys = event.key
-        //     var numbers = '0123456789'
-        //     var value = $('.input-money').val()
-        //     if (numbers.includes(keys)) {
-        //         sale(value)
-        //     } else if (keys === 'Backspace') {
-        //         sale(value)
-        //     }
-        // })
-        // //
-        // $('.input-money').on('keypress', function (event) {
-        //     var keys = event.key
-        //     var numbers = '0123456789'
-        //     if (!numbers.includes(keys)) {
-        //        event.preventDefault()
-        //    }
-        // })
-        //
+
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
         })
@@ -197,6 +211,33 @@
             var str = String(y)
             $('.span-discounted').text(str)
         }
+
+        $('.input-search').on('focus', function () {
+            $('.div-hotgame, .div-retrieve').hide()
+            $('.input-search').addClass('input-search-left')
+            $('.span-cancle').show()
+        })
+        $('.span-cancle').on('click', function () {
+            $('.div-hotgame, .div-retrieve').show()
+            $('.input-search').removeClass('input-search-left')
+            $('.span-cancle').hide()
+        })
+
+        $('.div-classify').on('mouseenter', function () {
+            $('.img-classify').show()
+        })
+        $('.img-classify').on('mouseleave', function () {
+            $('.img-classify').hide()
+        })
+
+        //
+        // $('.id-input-qqnumber').on('keypress', function (event) {
+        //     var keys = event.key
+        //     var numbers = '0123456789'
+        //     if (!numbers.includes(keys)) {
+        //        event.preventDefault()
+        //    }
+        // })
         </script>
     </body>
 </html>
