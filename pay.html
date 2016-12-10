@@ -4,189 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>腾讯充值</title>
-        <style>
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
-        html {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-            height: 100%;
-            width: 100%;
-        }
-        body {
-            line-height: 1.6;
-            font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-            height: 100%;
-            width: inherit;
-        }
-        .nav {
-            position: fixed;
-            width: 100%;
-        }
-        .placeholder {
-            width: 100%;
-            height: 50px;
-        }
-        ul {
-            display: block;
-            padding-left: 0px;
-            text-align: center;
-            font-size: 0px;
-            width: 100%;
-            border-bottom: 1px solid #CACAC8;
-        }
-        .nav-li {
-            display:inline-block;
-            background-color: #FEFEFE;
-            height: 50px;
-            line-height: 50px;
-            font-size: 18px;
-            color: #808080;
-            width: 33.333%;
-        }
-        .li-line-active {
-            color: #07BB04;
-            border-bottom: 4px solid #07BB04;
-        }
-        .hidden {
-            display: none;
-        }
-        .box {
-            display: none;
-        }
-        .main-box1 {
-            width: 100%;
-        }
-        .main-box2 {
-
-        }
-        .main-box3 {
-
-        }
-        .active {
-            display: block;
-        }
-        .img-del {
-            position: absolute;
-            right: 15px;
-            top: 16px;
-        }
-        #id-input-qqnumber {
-            height: 45px;
-            border: none;
-            outline: none;
-            width: 80%;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        .div-input-qqnumber {
-            position: relative;
-            margin-top: 15px;
-            border-top: 1px solid #DEDEDF;
-            border-bottom: 1px solid #DEDEDF;
-            background-color: #FFFFFF;
-            padding-left: 5px;
-        }
-        .div-input-qqnumber:visited {
-            border-top: 1px solid #0BBD0B;
-            border-bottom: 1px solid #0BBD0B;
-        }
-        #main {
-            height: 100%;
-            width: 100%;
-            background-color: #EDEEF2;
-        }
-        #id-qqname {
-            font-size: 13px;
-            color: #666667;
-            position: absolute;
-            right: 45px;
-            top: 14px;
-        }
-        .div-button-chose{
-            margin-left: 10px;
-            margin-right: 10px;
-            text-align: center;
-        }
-        .div-buttons {
-            text-align: left;
-        }
-        .button-money {
-            display: inline-block;
-            background-color: #FFFFFF;
-            color: black;
-            padding: 0 1.32em;
-            font-size: 13px;
-            border-radius:5px;
-            border: 1px solid #DEDEDF;
-            line-height: 2.7;
-            padding: 0px;
-            min-width: 50px;
-            width: 22%;
-            text-align: center;
-            outline-style: none;
-        }
-        .button-money-color {
-            background-color: #0BBD0B;
-            color: white;
-            border: 0px;
-        }
-        .input-money {
-            width: 24%;
-        }
-        .button-ten {
-        }
-        .div-discounted {
-            text-align: left;
-            line-height: 65px;
-        }
-        .div-discounted span {
-            display: inline-block;
-            line-height: 40px;
-            vertical-align: baseline;
-        }
-        .span-discounted {
-            color: #FE7C4B;
-            font-size: 23px;
-        }
-        .span-y {
-            font-size: 17px;
-            font-weight: bold;
-        }
-        .span-x {
-            font-size: 10px;
-            margin-left: 18px;
-        }
-        #button-recharge {
-            display: block;
-            width: 100%;
-            color: white;
-            background-color: #1AAD19;
-            border: 1px solid #DEDEDF;
-            border-radius:5px;
-            font-size: 18px;
-            line-height:2.555;
-            outline-style: none;
-
-        }
-        .p-balance {
-            font-size: 10px;
-            line-height: 30px;
-            color: #808080;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        .div-remark {
-            margin: 15px 10px 0px 10px;
-            font-size: 10px;
-            color: #808080;
-        }
-        </style>
-
+        <link rel="stylesheet" href="pay.css">
+        <script src="tool/jquery-3.1.1.min.js"></script>
     </head>
     <body>
         <div id="main">
@@ -202,11 +21,11 @@
                 </div>
             </header>
             <main>
-                <div class="main-box1 box active">
+                <div class="main-box1 box-hidden">
                     <div class="">
                         <div class="div-input-qqnumber">
                             <form id="form-qqnumber" action="index.html" method="post">
-                                <input id="id-input-qqnumber" type="text" name="qqNumber" value="" placeholder="请输入QQ账号">
+                                <input id="id-input-qqnumber" type="number" name="qqNumber" value="" placeholder="请输入QQ账号" maxlength="12">
                                 <span id="id-qqname">启亮</span>
                                 <img class="img-del" src="pay/img/x.png" width="17px" height="17px">
                             </form>
@@ -218,7 +37,8 @@
                             <button class="button-money button-ten button-money-color"type="button" name="">10 Q币</button>
                             <button class="button-money button-twenty" type="button" name="">20 Q币</button>
                             <button class="button-money button-hundred" type="button" name="">100 Q币</button>
-                            <input class="button-money input-money"  type="text" name="" value="" placeholder="其他数额">
+                            <input class="button-money input-money"  type="number" name="" value="" placeholder="其他数额"     maxlength="4";
+>
                         </div>
                         <div class="div-discounted">
                             <p><span class="span-discounted">9.5</span><span class="span-y">元</span><span class="span-x">(95折)</span></p>
@@ -241,6 +61,84 @@
             </main>
         </div>
 
-</div>
+        <script>
+
+        // log函数
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+        $('.li-q').on('click', function () {
+            $('.li-q').addClass('li-line-active')
+            $('.li-game, .li-searve').removeClass('li-line-active')
+            $('.main-box2, main-box3').hide()
+            $('.main-box1').show()
+        })
+
+        $('.li-game').on('click', function () {
+            $('.li-game').addClass('li-line-active')
+            $('.li-q, .li-searve').removeClass('li-line-active')
+            $('.main-box1, main-box3').hide()
+            $('.main-box2').show()
+        })
+
+        $('.li-searve').on('click', function () {
+            $('.li-searve').addClass('li-line-active')
+            $('.li-game, .li-q').removeClass('li-line-active')
+            $('.main-box1, main-box2').hide()
+            $('.main-box3').show()
+        })
+
+        $('.button-ten').on('click', function () {
+            $('.button-ten').addClass('button-money-color')
+            $('.button-ten').siblings().removeClass('button-money-color input-border')
+            var y = sale(10)
+        })
+        $('.button-twenty').on('click', function () {
+            $('.button-twenty').addClass('button-money-color')
+            $('.button-twenty').siblings().removeClass('button-money-color input-border')
+            var y = sale(20)
+        })
+        $('.button-hundred').on('click', function () {
+            $('.button-hundred').addClass('button-money-color')
+            $('.button-hundred').siblings().removeClass('button-money-color input-border')
+            var y = sale(100)
+        })
+        $('.input-money').on('click', function () {
+            $('.input-money').addClass('input-border')
+            $('.div-buttons').children().removeClass('button-money-color')
+            $('.span-discounted').text(0)
+        })
+
+        $('.input-money').on('keyup', function (event) {
+            var keys = event.key
+            var numbers = '0123456789'
+            if (numbers.includes(keys)) {
+                var value = $('.input-money').val()
+                sale(value)
+            } else if (keys === 'Backspace') {
+                var value = $('.input-money').val()
+                sale(value)
+            }
+        })
+        $('#id-input-qqnumber').on('focus', function () {
+            $('.img-del').show()
+        })
+
+        $('.img-del').on('click', function () {
+            $('#id-input-qqnumber').val('')
+            $('.img-del').hide()
+        })
+
+        $('#id-input-qqnumber').on('blur', function () {
+        setTimeout("$('.img-del').hide()", 400)
+        })
+
+        var sale = function (num) {
+            var x = (num * 0.95)
+            var y = (Math.round(x * 100) / 100)
+            $('.span-discounted').text(y)
+        }
+
+        </script>
     </body>
 </html>
