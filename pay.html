@@ -107,10 +107,13 @@
             right: 45px;
             top: 14px;
         }
-        .div-buttons {
+        .div-button-chose{
             margin-left: 10px;
             margin-right: 10px;
             text-align: center;
+        }
+        .div-buttons {
+            text-align: justify;
         }
         .button-money {
             display: inline-block;
@@ -121,8 +124,8 @@
             border-radius:5px;
             border: 1px solid #DEDEDF;
             line-height: 2.7;
-            width: 23%;
             min-width: 85px;
+            width: 24%;
             font-weight: bold;
             text-align: center;
         }
@@ -132,6 +135,8 @@
             border: 0px;
         }
         .input-money {
+            outline-color: #1AAD19;
+
         }
         .button-ten {
         }
@@ -206,11 +211,13 @@
                         </div>
                         <p class="p-balance">余额：<span class="span-balance">0</span>&nbsp;Q币</p>
                     </div>
-                    <div class="div-buttons">
-                        <button class="button-money button-ten button-money-color"type="button" name="">10 Q币</button>
-                        <button class="button-money button-twenty" type="button" name="">20 Q币</button>
-                        <button class="button-money button-hundred" type="button" name="">100 Q币</button>
-                        <input class="button-money input-money"type="text" name="" value="" placeholder="其他数额">
+                    <div class="div-button-chose">
+                        <div class="div-buttons">
+                            <button class="button-money button-ten button-money-color"type="button" name="">10 Q币</button>
+                            <button class="button-money button-twenty" type="button" name="">20 Q币</button>
+                            <button class="button-money button-hundred" type="button" name="">100 Q币</button>
+                            <input class="button-money input-money"  type="text" name="" value="" placeholder="其他数额">
+                        </div>
                         <div class="div-discounted">
                             <p><span class="span-discounted">9.5</span><span class="span-y">元</span><span class="span-x">(95折)</span></p>
                         </div>
