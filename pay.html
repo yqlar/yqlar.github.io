@@ -37,7 +37,7 @@
                             <button class="button-money button-ten button-money-color"type="button" name="">10 Q币</button>
                             <button class="button-money button-twenty" type="button" name="">20 Q币</button>
                             <button class="button-money button-hundred" type="button" name="">100 Q币</button>
-                            <input class="button-money input-money dddd"  type="text" name="" value="" placeholder="其他数额"     maxlength="4";
+                            <input class="button-money input-money dddd"  type="text" name="" value="" placeholder="其他数额" maxlength="4";
 >
                         </div>
                         <div class="div-discounted">
@@ -60,7 +60,7 @@
                 </div>
             </main>
         </div>
-
+<p>111</p>
         <script>
 
         // log函数
@@ -114,9 +114,9 @@
             var input = $('.input-money')
             var numbers = '0123456789'
             var value = input.val()
-            if (keys === 'Backspace') {
+            if (numbers.includes(keys)) {
                 sale(value)
-            } else if (numbers.includes(keys)) {
+            } else if (keys === 'Backspace') {
                 sale(value)
             }
         })
