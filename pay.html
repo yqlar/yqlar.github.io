@@ -25,7 +25,7 @@
                     <div class="">
                         <div class="div-input-qqnumber">
                             <form id="form-qqnumber" action="index.html" method="post">
-                                <input id="id-input-qqnumber" type="number" name="qqNumber" value="" placeholder="请输入QQ账号" maxlength="12">
+                                <input id="id-input-qqnumber" type="text" name="qqNumber" value="" placeholder="请输入QQ账号" maxlength="12">
                                 <span id="id-qqname">启亮</span>
                                 <img class="img-del" src="pay/img/x.png" width="17px" height="17px">
                             </form>
@@ -37,7 +37,7 @@
                             <button class="button-money button-ten button-money-color"type="button" name="">10 Q币</button>
                             <button class="button-money button-twenty" type="button" name="">20 Q币</button>
                             <button class="button-money button-hundred" type="button" name="">100 Q币</button>
-                            <input class="button-money input-money"  type="number" name="" value="" placeholder="其他数额"     maxlength="4";
+                            <input class="button-money input-money dddd"  type="text" name="" value="" placeholder="其他数额"     maxlength="4";
 >
                         </div>
                         <div class="div-discounted">
@@ -109,19 +109,40 @@
             $('.span-discounted').text(0)
         })
 
-        $('.input-money').on('keyup', function (event) {
+        $('.input-money').on('keypress', function (event) {
             var keys = event.key
             var numbers = '0123456789'
-            if (numbers.includes(keys)) {
-                var value = $('.input-money').val()
+            if (!numbers.includes(keys)) {
+                event.preventDefault()
+            }
+        })
+
+        $('.input-money').on('keyup', function (event) {
+            var keys = event.key
+            var input = $('.input-money')
+            var numbers = '0123456789'
+            var value = input.val()
+            if (keys === 'Backspace') {
                 sale(value)
-            } else if (keys === 'Backspace') {
-                var value = $('.input-money').val()
+            } else if (numbers.includes(keys)) {
                 sale(value)
             }
         })
+
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
+        })
+        $('#id-input-qqnumber').on('keypress', function () {
+            var keys = event.key
+            var input = $('#id-input-qqnumber')
+            var numbers = '0123456789'
+            if (keys === 'Backspace') {
+                var value = input.val()
+            } else if (numbers.includes(keys)) {
+                var value = input.val()
+            } else if (!numbers.includes(keys)) {
+                event.preventDefault()
+            }
         })
 
         $('.img-del').on('click', function () {
@@ -138,6 +159,13 @@
             var y = (Math.round(x * 100) / 100)
             $('.span-discounted').text(y)
         }
+
+        // $('#button-recharge').on('click', function () {
+        //     var inputMoner = $('.input-money').val()
+        //     if () {
+        //     }
+        // })
+
 
         </script>
     </body>
