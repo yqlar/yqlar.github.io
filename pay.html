@@ -127,6 +127,13 @@
                 </div>
 
                 <div class="main-box3 box-hidden">
+                    <div class="div-searves">
+                        <!-- <div class="div-searves-vip">
+                            <img src="pay/a1.png">
+                            <p>QQ会员</p><span class="span-illustrate">QQ、游戏、生活特权体验</span>
+                            <span class="span-month">10元/月</span><h4> > </h4>
+                        </div> -->
+                    </div>
                 </div>
             </main>
         </div>
@@ -140,21 +147,21 @@
         $('.li-q').on('click', function () {
             $('.li-q').addClass('li-line-active')
             $('.li-game, .li-searve').removeClass('li-line-active')
-            $('.main-box2, main-box3').hide()
+            $('.main-box2, .main-box3').hide()
             $('.main-box1').show()
         })
 
         $('.li-game').on('click', function () {
             $('.li-game').addClass('li-line-active')
             $('.li-q, .li-searve').removeClass('li-line-active')
-            $('.main-box1, main-box3').hide()
+            $('.main-box1, .main-box3').hide()
             $('.main-box2').show()
         })
 
         $('.li-searve').on('click', function () {
             $('.li-searve').addClass('li-line-active')
             $('.li-game, .li-q').removeClass('li-line-active')
-            $('.main-box1, main-box2').hide()
+            $('.main-box1, .main-box2').hide()
             $('.main-box3').show()
         })
 
@@ -229,6 +236,112 @@
         $('.img-classify').on('mouseleave', function () {
             $('.img-classify').hide()
         })
+
+        var searves = function (data) {
+            for (var i = 0; i < data.length; i++) {
+                data[i]
+                var t = `
+                <div class="div-searves">
+                    <div class="div-searves-vip">
+                        <img src=${data[i].img}>
+                        <p>${data[i].name}</p><span class="span-illustrate">${data[i].illustrate}</span>
+                        <span class="span-month">${data[i].mongth}元/月</span><h4> > </h4>
+                    </div>
+                </div>
+                `
+                $('.div-searves').append(t)
+            }
+        }
+        var data = [
+            {
+                'img': '"pay/a1.png"',
+                'name': 'QQ会员',
+                'illustrate': 'QQ、游戏、生活特权体验',
+                'mongth': 10,
+            },
+            {
+                'img': '"pay/a2.png"',
+                'name': '超级会员',
+                'illustrate': '最快等级加速、移动在线',
+                'mongth': 20,
+            },
+            {
+                'img': '"pay/a3.png"',
+                'name': '花钻贵族',
+                'illustrate': '精美装扮、游戏特权、礼包',
+                'mongth': 10,
+            },
+            {
+                'img': '"pay/a4.png"',
+                'name': '腾讯视频VIP',
+                'illustrate': ' 视频免广告，大片免费看',
+                'mongth': 20,
+            },
+            {
+                'img': '"pay/a5.png"',
+                'name': '绿钻豪华版',
+                'illustrate': '享绿钻+付费音乐包双重特权',
+                'mongth': 15,
+            },
+            {
+                'img': '"pay/a6.png"',
+                'name': '蓝钻贵族',
+                'illustrate': '游戏特权加成、礼包、踢人',
+                'mongth': 10,
+            },
+            {
+                'img': '"pay/a7.png"',
+                'name': 'CF会员',
+                'illustrate': '踢人防踢，退场无惩罚等',
+                'mongth': 30,
+            },
+            {
+                'img': '"pay/a8.png"',
+                'name': '付费音乐包',
+                'illustrate': '付费音乐下载300首/月、SQ试听',
+                'mongth': 8,
+            },
+            {
+                'img': '"pay/a9.png"',
+                'name': '豪华付费音乐包',
+                'illustrate': '付费音乐下载500首/月、SQ试听',
+                'mongth': 12,
+            },
+            {
+                'img': '"pay/a10.png"',
+                'name': '黄钻贵族豪华版',
+                'illustrate': '闪电图标、成长加速、装扮',
+                'mongth': 15,
+            },
+            {
+                'img': '"pay/a11.png"',
+                'name': '炫舞紫钻',
+                'illustrate': '踢人防踢，加成对局经验',
+                'mongth': 20,
+            },
+            {
+                'img': '"pay/a12.png"',
+                'name': '红钻贵族',
+                'illustrate': '5万件QQ秀免费穿、免费送',
+                'mongth': 10,
+            }
+        ]
+
+        searves(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //
         // $('.id-input-qqnumber').on('keypress', function (event) {

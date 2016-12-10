@@ -312,3 +312,57 @@ ul {
     font-weight: bold;
     line-height: 35px;
 }
+
+.div-searves {
+    margin-top: 15px;
+    background-color: white;
+    border-top: 1px solid #CACAC8;
+}
+
+.div-searves div {
+    position: relative;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid #CACAC8;
+    height: 80px;
+}
+.div-searves img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:8px;
+    left: 0px;
+}
+.div-searves p {
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top:15px;
+    left: 70px;
+
+}
+.div-searves h4 {
+    font-size: 25px;
+    display: inline-block;
+    color: #CACAC8;
+    position: absolute;
+    top:15px;
+    right: 0px;
+}
+.span-illustrate {
+    display: inline-block;
+    font-size: 11px;
+    color: #7F7F7F;
+    position: absolute;
+    top:40px;
+    left: 70px;
+}
+.span-month {
+    display: inline-block;
+    font-size: 11px;
+    color: #7F7F7F;
+    position: absolute;
+    top:28px;
+    right: 28px;
+}
