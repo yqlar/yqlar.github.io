@@ -20,10 +20,14 @@ body {
 .nav {
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 .placeholder {
     width: 100%;
     height: 50px;
+}
+.box-hidden {
+    display: none;
 }
 ul {
     display: block;
@@ -53,7 +57,7 @@ ul {
     width: 100%;
 }
 .main-box2 {
-
+    width: 100%;
 }
 .main-box3 {
 
@@ -179,4 +183,104 @@ ul {
     margin: 15px 10px 0px 10px;
     font-size: 10px;
     color: #808080;
+}
+.div-fixedbox{
+    position: fixed;
+    top:50px;
+    width: 100%;
+}
+.div-search-box {
+    background-color: #FFFFFF;
+    position: relative;
+    height: 50px;
+    top: 1px;
+    border-bottom: 1px solid #CACAC8;
+}
+.div-classify {
+    display: inline-block;
+    background-color: #EEEFF3;
+    width: 17%;
+    position: relative;
+    border: 1px solid #EEEFF3;
+    border-radius: 5px;
+    margin-left: 10px;
+    top: 6px;
+    line-height: 23px;
+}
+.div-classify span {
+    font-size: 10px;
+    position: relative;
+    top: -2px;
+    left: 2px;
+}
+.div-classify img {
+    position: relative;
+    left: 5px;
+
+}
+.div-search {
+    display: inline-block;
+    background-color: #EEEFF3;
+    width: 74%;
+    position: relative;
+    border: 1px solid #EEEFF3;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 30px;
+    top: 9px;
+}
+.div-search span {
+    font-size: 10px;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    display: none;
+}
+.input-search {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    background-color: #EEEFF3;
+    position: relative;
+    text-align: center;
+    padding: 0px;
+    top: -6px;
+    border: 1px solid #EEEFF3;
+    border-radius: 5px;
+}
+
+.div-hotgame  {
+    margin-top: 50px;
+}
+.div-hotgame p {
+    font-size: 11px;
+}
+.div-hotgame ul {
+    text-align: left;
+    background-color: #FFFFFF;
+}
+.div-hotgame li {
+    text-decoration: none;
+    border: 1px solid #EEEFF3;
+    font-size: 11px;
+    font-weight: bold;
+    display: block;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+.div-hotgame img {
+    border: 1px solid #EEEFF3;
+    line-height: 20px;
+    position: absolute;
+    top: 9px;
+
+}
+.div-hotgame span {
+    font-weight: bold;
+    position: absolute;
+    top: 18px;
+    left: 80px;
 }
