@@ -109,14 +109,6 @@
             $('.span-discounted').text(0)
         })
 
-        $('.input-money').on('keypress', function (event) {
-            var keys = event.key
-            var numbers = '0123456789'
-            if (!numbers.includes(keys)) {
-                event.preventDefault()
-            }
-        })
-
         $('.input-money').on('keyup', function (event) {
             var keys = event.key
             var input = $('.input-money')
@@ -128,6 +120,7 @@
                 sale(value)
             }
         })
+
 
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
@@ -144,7 +137,7 @@
                 event.preventDefault()
             }
         })
-        
+
 
         $('.img-del').on('click', function () {
             $('#id-input-qqnumber').val('')
