@@ -47,9 +47,17 @@
                     <div class="div-remark">
                         <p>备注：Q币仅能用于兑换腾讯公司直接运营的产品和服务，不能兑换现金，不能进行转账交易，不能兑换腾讯公司体系外的产品和服务。</p>
                     </div>
-
+                    <div class="div-warning-qq">
+                        <div class="div-warning">
+                            请输入正确的QQ号码
+                        </div>
+                    </div>
+                    <div class="div-warning-money">
+                        <div class="div-warning">
+                            请输入正确的充值数量
+                        </div>
+                    </div>
                 </div>
-
                 <div class="main-box2 box-hidden ">
                     <img class="img-classify" src="333.png">
                     <div class="div-fixedbox">
@@ -120,26 +128,93 @@
                         <p>传奇世界</p>
                         <p>赤壁</p>
                     </div>
-
                     <div class="div">
-
                     </div>
                 </div>
-
                 <div class="main-box3 box-hidden">
                     <div class="div-searves">
-                        <!-- <div class="div-searves-vip">
-                            <img src="pay/a1.png">
-                            <p>QQ会员</p><span class="span-illustrate">QQ、游戏、生活特权体验</span>
-                            <span class="span-month">10元/月</span><h4> > </h4>
-                        </div> -->
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a1.png">
+                                <p>QQ会员</p><span class="span-illustrate">QQ、游戏、生活特权体验</span>
+                                <span class="span-month">10元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a2.png">
+                                <p>超级会员</p><span class="span-illustrate">最快等级加速、移动在线</span>
+                                <span class="span-month">20元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a3.png">
+                                <p>花钻贵族</p><span class="span-illustrate">精美装扮、游戏特权、礼包</span>
+                                <span class="span-month">10元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a4.png">
+                                <p>腾讯视频VIP</p><span class="span-illustrate"> 视频免广告，大片免费看</span>
+                                <span class="span-month">20元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a5.png">
+                                <p>绿钻豪华版</p><span class="span-illustrate">享绿钻+付费音乐包双重特权</span>
+                                <span class="span-month">15元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a6.png">
+                                <p>蓝钻贵族</p><span class="span-illustrate">游戏特权加成、礼包、踢人</span>
+                                <span class="span-month">10元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a7.png">
+                                <p>CF会员</p><span class="span-illustrate">踢人防踢，退场无惩罚等</span>
+                                <span class="span-month">30元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                            <div class="div-searves-vip">
+                                <img src="pay/a8.png">
+                                <p>付费音乐包</p><span class="span-illustrate">付费音乐下载300首/月、SQ试听</span>
+                                <span class="span-month">8元/月</span><h4> > </h4>
+                            </div>
+                        </div>
+                        <div class="div-searves">
+                             <div class="div-searves-vip">
+                                 <img src="pay/a9.png">
+                                 <p>豪华付费音乐包</p><span class="span-illustrate">付费音乐下载500首/月、SQ试听</span>
+                                 <span class="span-month">12元/月</span><h4> > </h4>
+                             </div>
+                         </div>
+                         <div class="div-searves">
+                             <div class="div-searves-vip">
+                                 <img src="pay/a10.png">
+                                 <p>黄钻贵族豪华版</p><span class="span-illustrate">闪电图标、成长加速、装扮</span>
+                                 <span class="span-month">15元/月</span><h4> > </h4>
+                             </div>
+                         </div>
+                         <div class="div-searves">
+                             <div class="div-searves-vip">
+                                 <img src="pay/a11.png">
+                                 <p>炫舞紫钻</p><span class="span-illustrate">踢人防踢，加成对局经验</span>
+                                 <span class="span-month">20元/月</span><h4> > </h4>
+                             </div>
+                         </div>
                     </div>
                 </div>
             </main>
         </div>
-
         <script>
-
         // log函数
         var log = function() {
             console.log.apply(console, arguments)
@@ -150,21 +225,18 @@
             $('.main-box2, .main-box3').hide()
             $('.main-box1').show()
         })
-
         $('.li-game').on('click', function () {
             $('.li-game').addClass('li-line-active')
             $('.li-q, .li-searve').removeClass('li-line-active')
             $('.main-box1, .main-box3').hide()
             $('.main-box2').show()
         })
-
         $('.li-searve').on('click', function () {
             $('.li-searve').addClass('li-line-active')
             $('.li-game, .li-q').removeClass('li-line-active')
             $('.main-box1, .main-box2').hide()
             $('.main-box3').show()
         })
-
         $('.button-ten').on('click', function () {
             $('.button-ten').addClass('button-money-color')
             $('.button-ten').siblings().removeClass('button-money-color input-border')
@@ -186,22 +258,6 @@
             $('.span-discounted').text(0)
             $('.input-money').val('')
         })
-
-
-
-        var keyup = function (event) {
-            var keys = $(event.target)
-            var numbers = '0123456789'
-            var value = keys.val()
-            for (var i = 0; i < value.length; i++) {
-                var x = value[(length)]
-                if (numbers.includes(x)) {
-                    sale(value)
-                }
-            }
-            sale(value)
-        }
-
         $('#id-input-qqnumber').on('focus', function () {
             $('.img-del').show()
         })
@@ -212,13 +268,6 @@
             $('#id-input-qqnumber').val('')
             $('.img-del').hide()
         })
-        var sale = function (num) {
-            var x = (num * 0.95)
-            var y = (Math.round(x * 100) / 100)
-            var str = String(y)
-            $('.span-discounted').text(str)
-        }
-
         $('.input-search').on('focus', function () {
             $('.div-hotgame, .div-retrieve').hide()
             $('.input-search').addClass('input-search-left')
@@ -237,6 +286,38 @@
             $('.img-classify').hide()
         })
 
+        $('#button-recharge').on('click', function () {
+            var others = $('.input-money').val()
+            var qq = $('#id-input-qqnumber').val()
+            if (qq === '') {
+                $('.div-warning-qq').show()
+                setTimeout("$('.div-warning-qq').hide()", 1500)
+            } else if ((qq != '') && (others === '')) {
+                $('.div-warning-money').show()
+                setTimeout("$('.div-warning-money').hide()", 1500)
+            }
+        })
+
+        var keyup = function (event) {
+            var keys = $(event.target)
+            var numbers = '0123456789'
+            var value = keys.val()
+            for (var i = 0; i < value.length; i++) {
+                var x = value[(length)]
+                if (numbers.includes(x)) {
+                    sale(value)
+                }
+            }
+            sale(value)
+        }
+        var sale = function (num) {
+            var x = (num * 0.95)
+            var y = (Math.round(x * 100) / 100)
+            var str = String(y)
+            $('.span-discounted').text(str)
+        }
+
+        /*
         var searves = function (data) {
             for (var i = 0; i < data.length; i++) {
                 data[i]
@@ -249,6 +330,7 @@
                     </div>
                 </div>
                 `
+                log(t)
                 $('.div-searves').append(t)
             }
         }
@@ -319,38 +401,10 @@
                 'illustrate': '踢人防踢，加成对局经验',
                 'mongth': 20,
             },
-            {
-                'img': '"pay/a12.png"',
-                'name': '红钻贵族',
-                'illustrate': '5万件QQ秀免费穿、免费送',
-                'mongth': 10,
-            }
         ]
 
         searves(data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //
-        // $('.id-input-qqnumber').on('keypress', function (event) {
-        //     var keys = event.key
-        //     var numbers = '0123456789'
-        //     if (!numbers.includes(keys)) {
-        //        event.preventDefault()
-        //    }
-        // })
+        */
         </script>
     </body>
 </html>

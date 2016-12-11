@@ -366,3 +366,19 @@ ul {
     top:28px;
     right: 28px;
 }
+
+.div-warning-qq, .div-warning-money {
+    background-color: black;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    width: 50%;
+    border-radius: 5px;
+    line-height: 35px;
+    opacity: 0.85;
+    z-index:20;
+    display: none;
+}
+.div-warning {
+    z-index: 30;
+}
