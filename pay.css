@@ -208,15 +208,6 @@ ul {
     top: 1px;
     border-bottom: 1px solid #CACAC8;
 }
-.img-classify {
-    position: absolute;
-    top: 75px;
-    left: 10px;
-    z-index: 10;
-    width: 110px;
-    height: 127px;
-    display: none;
-}
 .div-classify {
     display: inline-block;
     background-color: #EEEFF3;
@@ -227,6 +218,16 @@ ul {
     margin-left: 10px;
     top: 6px;
     line-height: 27px;
+    max-width: 70px;
+}
+.img-classify {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    z-index: 10;
+    width: 110px;
+    height: 127px;
+    display: none;
 }
 .div-classify span {
     font-size: 10px;
