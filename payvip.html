@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>QQ会员充值</title>
+        <link rel="stylesheet" href="pay.css">
+        <script src="tool/jquery-3.1.1.min.js"></script>
+        <style>
+        html {
+            background-color: #EDEEF2;
+        }
+        .div-input-qqnumber {
+            margin: 0 auto;
+        }
+        .p-continue {
+            font-size: 12px;
+            text-align: center;
+            position: absolute;
+            right: 10px;
+        }
+        .div-discounted p {
+            display: inline-block;
+        }
+        .div-p {
+            position: relative;
+        }
+        .p-vipyears {
+            font-size: 10px;
+            color: #3879D9;
+            display: inline;
+            position: absolute;
+            right: 10px;
+            top: 11px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="div-searves">
+            <div class="div-searves-vip" style="border-bottom: 0px;">
+                <img src="pay/a1.png">
+                <p>QQ会员</p>
+            </div>
+        </div>
+        <div class="">
+            <div class="div-input-qqnumber">
+                <form id="form-qqnumber" action="index.html" method="post">
+                    <input id="id-input-qqnumber" type="tel" pattern="[0-9]*" name="qqNumber" value="" placeholder="请输入QQ账号" maxlength="12">
+                    <span id="id-qqname">启亮</span>
+                    <img class="img-del" src="pay/img/x.png" width="17px" height="17px">
+                </form>
+            </div>
+            <div class="div-p">
+                <p class="p-balance">开通月份</p>
+                <p class="p-vipyears">开年费享特权</p>
+            </div>
+        </div>
+        <div class="div-button-chose">
+            <div class="div-buttons">
+                <button class="button-money button-ten button-money-color"type="button" name="">1个月</button>
+                <button class="button-money button-twenty" type="button" name="">3个月</button>
+                <button class="button-money button-hundred" type="button" name="">6个月</button>
+                <input class="button-money input-money dddd"  type="tel" name="" value="" placeholder="任意月份" maxlength="3"  oninput="keyup(event)" >
+            </div>
+            <div class="div-discounted">
+                <p><span class="span-discounted">9.5</span><span class="span-y">元</span><span class="span-x">(95折)</span></p>
+                <p class="p-continue"><input type="checkbox" name="" value="">自动续费</p>
+            </div>
+            <button id="button-recharge"  type="button" name="button">立即开通</button>
+        </div>
+        <div class="div-warning-qq">
+            <div class="div-warning">
+                请输入正确的QQ号码
+            </div>
+        </div>
+        <div class="div-warning-money">
+            <div class="div-warning">
+                请输入正确的开通月份
+            </div>
+        </div>
+
+
+        <script>
+        // log函数
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+        $('.button-ten').on('click', function () {
+            $('.button-ten').addClass('button-money-color')
+            $('.button-ten').siblings().removeClass('button-money-color input-border')
+            var y = sale(1)
+        })
+        $('.button-twenty').on('click', function () {
+            $('.button-twenty').addClass('button-money-color')
+            $('.button-twenty').siblings().removeClass('button-money-color input-border')
+            var y = sale(3)
+        })
+        $('.button-hundred').on('click', function () {
+            $('.button-hundred').addClass('button-money-color')
+            $('.button-hundred').siblings().removeClass('button-money-color input-border')
+            var y = sale(6)
+        })
+        $('.input-money').on('click', function () {
+            $('.input-money').addClass('input-border')
+            $('.div-buttons').children().removeClass('button-money-color')
+            $('.span-discounted').text(0)
+            $('.input-money').val('')
+        })
+        $('#id-input-qqnumber').on('focus', function () {
+            $('.img-del').show()
+        })
+        $('#id-input-qqnumber').on('blur', function () {
+            setTimeout("$('.img-del').hide()", 300)
+        })
+        $('.img-del').on('click', function () {
+            $('#id-input-qqnumber').val('')
+            $('.img-del').hide()
+        })
+        $('.input-search').on('focus', function () {
+            $('.div-hotgame, .div-retrieve').hide()
+            $('.input-search').addClass('input-search-left')
+            $('.span-cancle').show()
+        })
+        $('.span-cancle').on('click', function () {
+            $('.div-hotgame, .div-retrieve').show()
+            $('.input-search').removeClass('input-search-left')
+            $('.span-cancle').hide()
+        })
+
+        $('.div-classify').on('mouseenter', function () {
+            $('.img-classify').show()
+        })
+        $('.img-classify').on('mouseleave', function () {
+            $('.img-classify').hide()
+        })
+
+        $('#button-recharge').on('click', function () {
+            var others = $('.input-money').val()
+            var qq = $('#id-input-qqnumber').val()
+            if (qq === '') {
+                $('.div-warning-qq').show()
+                setTimeout("$('.div-warning-qq').hide()", 1500)
+            } else if ((qq != '') && (others === '')) {
+                $('.div-warning-money').show()
+                setTimeout("$('.div-warning-money').hide()", 1500)
+            }
+        })
+
+        $('.p-vipyears').on('click', function () {
+            $('.input-money').click()
+            $('.input-money').val('12')
+            sale(12)
+        })
+
+
+
+        var keyup = function (event) {
+            var keys = $(event.target)
+            var numbers = '0123456789'
+            var value = keys.val()
+            for (var i = 0; i < value.length; i++) {
+                var x = value[(length)]
+                if (numbers.includes(x)) {
+                    sale(value)
+                }
+            }
+            sale(value)
+        }
+        var sale = function (num) {
+            var x = (num * 9.5)
+            var y = (Math.round(x * 100) / 100)
+            var str = String(y)
+            $('.span-discounted').text(str)
+        }
+        </script>
+    </body>
+</html>

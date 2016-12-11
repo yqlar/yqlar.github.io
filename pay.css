@@ -173,6 +173,7 @@ ul {
 
 }
 .p-balance {
+    display: inline-block;
     font-size: 10px;
     line-height: 30px;
     color: #808080;
