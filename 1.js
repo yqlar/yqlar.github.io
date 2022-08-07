@@ -10,6 +10,7 @@ var searves = function (data) {
         </div>
     </div>
     `
+
     $('.div-searves').append(t)
 }
 
